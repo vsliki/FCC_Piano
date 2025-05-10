@@ -1,73 +1,90 @@
-html {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: sans-serif;
+}
+
+#piano {
+  background-color: #00471b;
+  padding: 30px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: 40px auto;
+  position: relative;
+}
+
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.keys {
+  display: flex;
+  position: relative;
+  margin-top: 60px;
+  overflow: visible; /* CRUCIAL pour voir les touches noires */
+}
+
+.white-key {
+  width: 60px;
+  height: 200px;
+  background: white;
+  border: 1px solid black;
+  position: relative;
+  z-index: 1;
+  overflow: visible; /* Permet aux touches noires de dépasser */
+  border-radius: 0 0 5px 5px;
+}
+
+.black-key {
+  width: 30px;
+  height: 120px;
+  background: #1d1e22;
+  position: absolute;
+  top: 0;
+  right: -15px;
+  z-index: 2;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Effets visuels */
+.white-key:hover,
+.black-key:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+.white-key:active,
+.black-key:active {
+  transform: translateY(2px);
+}
+.credit {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: white;
+background: rgba(0, 0, 0, 0.75);
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  max-width: 90%;
+
   
-  *, *::before, *::after {
-    box-sizing: inherit;
-  }
-  
-  #piano {
-    background-color: #00471b;
-    width: 992px;
-    height: 290px;
-    margin: 80px auto;
-    padding: 90px 20px 0 20px;
-    position: relative;
-    border-radius: 10px;
-  }
-  
-  .keys {
-    background-color: #040404;
-    width: 949px;
-    height: 180px;
-    padding-left: 2px;
-    overflow: hidden;
-  }
-  
-  .key {
-    background-color: #ffffff;
-    position: relative;
-    width: 41px;
-    height: 175px;
-    margin: 2px;
-    float: left;
-    border-radius: 0 0 3px 3px;
-  }
-  
-  .key.black--key::after {
-    background-color: #1d1e22;
-    content: "";
-    position: absolute;
-    left: -18px;
-    width: 32px;
-    height: 100px;
-    border-radius: 0 0 3px 3px;
-  }
-  
-  .logo {
-    width: 200px;
-    position: absolute;
-    top: 23px;
-  }
-  
-  @media (max-width: 768px) {
-    #piano {
-      width: 358px;
-    }
-  
-    .keys {
-      width: 318px;
-    }
-  
-    .logo {
-      width: 150px;
-    }
-  }
-  @media (max-width: 1199px) and (min-width: 769px) {
-    #piano{
-      width: 675px;
-    }
-    .keys{
-      width: 633px;
-    }
-    }
+  text-align: center;
+}
+
+.credit img {
+  color: black;
+  width: 90px;
+  filter: brightness(1.2);
+  height: auto;
+}
